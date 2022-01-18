@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Sniglet&display=swap');
+
+header {
+    background: #6785C1;
+}
+
+footer {
+    background: #6785C1;
+}
+
+.containerr {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 30px 20px;
+    margin: 0 auto;
+    width: 70%;
+}
+
+#todo{
+    visibility: hidden;
+}
+
+
+.container-header{
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    padding: 0px 20px;
+    margin: 0 auto;
+}
+
+.campoin{
+    width: 100%;
+    height: 4.2em;
+    border-radius: 5px;
+}
+
+.todo{
+    height: 200px;
+}
+
+
+
+.labels {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    /* identical to box height, or 100% */
+    letter-spacing: 0.03em;
+    color: #939597;
+}
+
+.titulo p{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 40px;
+    /* or 100% */
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.titulo{
+    margin: 1em 0;
+}
+
+.breakk {
+    flex-basis: 100%;
+    height: 0;
+  }
+
+input {
+    border: 1px solid #C1C1C1;  
+}
+
+.botao-submit{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 15px;
+
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 21px;
+}
+
+.botao-submit p{
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background: #6785C1;
+    padding: .7em 2em;
+    border-radius: 3px;
+}
+
+.botao {
+    float: right;
+    margin: 0;
+}
+
+.campo label{
+    position: relative;
+    top:10px;
+    left:10px;
+    background: #FFFFFF;
+    padding: 0 5px;
+
+}
+
+.rodape{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+.containerr .social{
+    float: right;
+    width: 20px;
+    height: 20px;
+    margin-left: 2em;
+}
