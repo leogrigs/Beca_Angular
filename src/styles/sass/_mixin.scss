@@ -1,0 +1,49 @@
+@mixin resetDellSettings() {
+    background-color: $key-blue-background;
+    color: #FFF;
+    box-shadow: 1px 1.5px 1px $key-blue-shadow;
+    border: 2px solid $key-blue-background;
+    transition: $transition;
+    margin: 10px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+@mixin resetDellHover() {
+    border: 2px solid $key-blue-background;
+    color: $key-blue-background;
+    background-color: hsla(0, 0%, 100%, 0);
+    transition: 0.5s;
+}
+
+@mixin resetDellActivated() {
+    box-shadow: 3px 3px 3px $key-blue-shadow;
+    background-color: $key-blue-background;
+    color: $key-background;
+}
+
+@mixin inputHoverAnnimations() {
+    border: 2px solid $key-background;
+    color: $key-color-top;
+    background-color: hsla(0, 0%, 100%, 0);
+    transition: 0.5s;
+}
+
+@mixin inputActivated() {
+    box-shadow: 3px 3px 3px $key-shadow;
+    background-color: $key-background;
+    color: $background;
+}
+
+/* Styling Thumb for diferents browsers */
+/* thumb = circle on the range */
+@mixin thumbBrowser() {
+    -webkit-appearance: none;
+    border: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 20px;
+    background: $key-red-background;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px $key-red-shadow;
+}

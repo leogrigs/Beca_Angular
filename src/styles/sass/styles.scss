@@ -1,0 +1,161 @@
+/* Importing Font */
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+// Variables
+@import '_variables';
+
+// Mixin
+@import '_mixin';
+
+/* Font settings */
+* {
+  font-family: 'Spartan', sans-serif;
+}
+
+.calc {
+
+  /* Background settings */
+  background-color: $background;
+  width: 100vw;
+  height: 100vh;
+  transition: $transition;
+  
+  // Content settings
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  
+  /* Keys or Bottons */
+  &__keys {
+      background-color: $background-dark;
+      border-radius: 10px;
+      padding: 10px;
+      transition: $transition;
+    }
+    
+    // Input Keys settings
+    &__input {
+        background-color: $key-background;
+        color: $key-color-bottom;
+        border: 2px solid $key-background;
+        border-radius: 5px;
+        box-shadow: 1px 1.5px 1px $key-shadow;
+        margin: 10px;
+        height: 35px;
+        transition: $transition;
+        
+        // Result settings
+        &--result{
+            background-color: $background-very-dark;
+            color: $key-color-top;
+            border: none;
+            margin-bottom: 20px;
+            text-align: right;
+            padding: 17px;
+            font-size: 32px;
+            border-radius: 10px;
+            transition: $transition;  
+        }
+
+        &--reset, &--del{
+            @include resetDellSettings();
+
+            &:hover{
+                @include resetDellHover();
+            }
+
+            &:active{
+                @include resetDellActivated();
+            }
+
+        }
+
+        &--del{
+            font-size: 13px;
+            padding: 0 3%;
+        }
+
+        &--equals{
+            background-color: $key-red-background;
+            color: $key-background;
+            box-shadow: 1px 1.5px 1px $key-red-shadow;
+            border: 2px solid $key-red-background;
+            transition: $transition;
+            margin: 10px;
+            height: 35px;
+            border-radius: 5px;
+
+            &:hover{
+                border: 2px solid $key-red-background;
+                color: $key-red-background;
+                background-color: hsla(0, 0%, 100%, 0);
+                transition: 0.5s;
+            }
+
+            &:active{
+                box-shadow: 3px 3px 3px $key-red-shadow;
+                background-color: $key-red-background;
+                color: $key-background;
+            }
+        }
+
+        /* Keys hover */
+        &:hover{
+            @include inputHoverAnnimations();
+        }
+
+        /* Keys activated */
+        &:active {
+            @include inputActivated();
+        }
+
+    }
+
+    /* Toggle theme button */
+    /* Basics configs for styling input type range */
+    input {
+        &[type=range]{
+            -webkit-appearance: none;
+            /* Hides the slider so that custom slider can be made */
+            width: 100%;
+            /* Specific width is required for Firefox. */
+            background: transparent;
+            /* Otherwise white in Chrome */
+
+            &::-webkit-slider-thumb{
+                -webkit-appearance: none;
+            }
+
+            &:focus{
+                outline: none;
+                /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+            }
+
+            &::-ms-track{
+                width: 100%;
+                cursor: pointer;
+    
+                /* Hides the slider so custom styles can be added */
+                background: transparent;
+                border-color: transparent;
+                color: transparent;
+            }
+
+            /* WebKit/Blink */
+            &::-webkit-slider-thumb{
+                @include thumbBrowser();
+                transition: $transition;
+            }
+
+            /* Firefox & IE */
+            &::-moz-range-thumb,
+            ::-ms-thumb{
+                @include thumbBrowser();
+            }
+        }
+    }
+}
