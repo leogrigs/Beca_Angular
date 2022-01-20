@@ -1,0 +1,45 @@
+<div class="formulario">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2"></div>
+
+            <div class="col-sm-8">
+
+                <div class="titulo mb-3">
+                    <p>Buscar Endereço</p>
+                </div>
+
+                <div class="formulario">
+                    <form action="">
+
+                        <div class="float-label form-floating mb-3">
+                            <label for="name">Digite seu nome</label>
+                            <input type="text" class="form-control" id="name" placeholder="Digite seu nome">
+                        </div>
+                        <div class="float-label form-floating mb-3">
+                            <label for="cpf">Digite seu CPF</label>
+                            <input type="text" class="form-control" id="cpf" placeholder="Digite seu CPF">
+                        </div>
+                        <div class="float-label form-floating mb-3">
+                            <label for="email">Digite seu e-mail</label>
+                            <input type="email" class="form-control" id="email" placeholder="Digite seu email">
+                        </div>
+                        <div class="float-label form-floating mb-3">
+                            <label for="cep">Digite seu CEP</label>
+                            <input type="text" class="form-control" id="cep" placeholder="Digite seu CEP">
+                        </div>
+
+                        <div class="botao mb-5">
+                            <button type="button" class="botao btn btn-lg" (click)="buscar()">
+                                <p>BUSCAR</p>
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="col-sm-2"></div>
+
+            </div>
+        </div>
+    </div>

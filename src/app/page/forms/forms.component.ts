@@ -13,7 +13,6 @@ export class FormsComponent implements OnInit {
   }
 
   buscar(): void {
-    console.log('caiu no todo');
     let todo = document.getElementById('todo');
     if (todo != null) {
       todo.style.visibility = "visible";

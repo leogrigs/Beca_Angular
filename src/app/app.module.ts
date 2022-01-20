@@ -2,23 +2,26 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FormsComponent } from './forms/forms.component';
-import { FooterComponent } from './footer/footer.component';
-import { TodoComponent } from './todo/todo.component';
 import { AppRoutingModule } from './app-routing.module';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSliderModule } from '@angular/material/slider';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { CoreModule } from './core/core.module';
+import { PageModule } from './page/page.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    FormsComponent,
-    FooterComponent,
-    TodoComponent
+    AppComponent
   ],
   imports: [
+    PageModule,
+    CoreModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatFormFieldModule,
+    MatSliderModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
