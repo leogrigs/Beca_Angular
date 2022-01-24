@@ -10,36 +10,38 @@
                 </div>
 
                 <div class="formulario">
-                    <form action="">
-
-                        <div class="float-label form-floating mb-3">
+                    <form [formGroup]="form" (ngSubmit)="buscar()">
+            
+                        <div class="form-group float-label form-floating mb-3">
                             <label for="name">Digite seu nome</label>
-                            <input type="text" class="form-control" id="name" placeholder="Digite seu nome">
+                            <input formControlName="nome" type="text" class="form-control" id="name" placeholder="Digite seu nome">
                         </div>
                         <div class="float-label form-floating mb-3">
                             <label for="cpf">Digite seu CPF</label>
-                            <input type="text" class="form-control" id="cpf" placeholder="Digite seu CPF">
+                            <input formControlName="cpf" mask="000.000.000-00" type="text" class="form-control" id="cpf" placeholder="Digite seu CPF">
                         </div>
                         <div class="float-label form-floating mb-3">
                             <label for="email">Digite seu e-mail</label>
-                            <input type="email" class="form-control" id="email" placeholder="Digite seu email">
+                            <input formControlName="email" type="email" class="form-control" id="email" placeholder="Digite seu email">
                         </div>
                         <div class="float-label form-floating mb-3">
                             <label for="cep">Digite seu CEP</label>
-                            <input type="text" class="form-control" id="cep" placeholder="Digite seu CEP">
+                            <input formControlName="cep" type="text" class="form-control" id="cep" placeholder="Digite seu CEP">
                         </div>
-
+            
                         <div class="botao mb-5">
-                            <button type="button" class="botao btn btn-lg" (click)="buscar()">
+                            <button [disabled]="!form.valid" type="submit" class="botao btn btn-lg">
                                 <p>BUSCAR</p>
                             </button>
                         </div>
-
+            
                     </form>
                 </div>
-
+                
                 <div class="col-sm-2"></div>
-
+                
             </div>
         </div>
     </div>
+
+    <app-todo [msg]="msg"></app-todo>

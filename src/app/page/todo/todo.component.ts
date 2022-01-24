@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-todo',
@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo.component.sass']
 })
 export class TodoComponent implements OnInit {
+
+  @Input() msg: string = '';
+
+  vector: string = './assets/img/Vector.svg';
 
   constructor() { }
 

@@ -9,6 +9,8 @@ export class FooterComponent implements OnInit {
 
   constructor() { }
 
+  direitos:string = "Copyright 2022 NTTDATA";
+
   ngOnInit(): void {
   }
 

@@ -2,20 +2,32 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsComponent } from './forms/forms.component';
 import { TodoComponent } from './todo/todo.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BemvindoComponent } from './bemvindo/bemvindo.component';
+import { RouterModule } from '@angular/router';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { BioComponent } from './bio/bio.component';
 
 
 @NgModule({
   declarations: [
     FormsComponent,
-    TodoComponent
+    TodoComponent,
+    BemvindoComponent,
+    NotfoundComponent,
+    BioComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    RouterModule,
+    ReactiveFormsModule
   ],
   exports: [
     FormsComponent,
-    TodoComponent
+    TodoComponent,
+    BemvindoComponent,
+    NotfoundComponent
   ]
 })
 export class PageModule { }
