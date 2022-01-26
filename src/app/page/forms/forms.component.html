@@ -19,6 +19,7 @@
                         <div class="float-label form-floating mb-3">
                             <label for="cpf">Digite seu CPF</label>
                             <input formControlName="cpf" mask="000.000.000-00" type="text" class="form-control" id="cpf" placeholder="Digite seu CPF">
+                            <app-vmessage texto='CPF inválido' *ngIf="this.form.get('cpf')?.value == ''"></app-vmessage>
                         </div>
                         <div class="float-label form-floating mb-3">
                             <label for="email">Digite seu e-mail</label>
@@ -26,7 +27,8 @@
                         </div>
                         <div class="float-label form-floating mb-3">
                             <label for="cep">Digite seu CEP</label>
-                            <input formControlName="cep" type="text" class="form-control" id="cep" placeholder="Digite seu CEP">
+                            <input #cep formControlName="cep" type="text" class="form-control" id="cep" placeholder="Digite seu CEP">
+                            <app-vmessage texto='Nome inválido' *ngIf="this.form.get('cep')?.value == ''"></app-vmessage>
                         </div>
             
                         <div class="botao mb-5">
@@ -44,4 +46,5 @@
         </div>
     </div>
 
-    <app-todo [msg]="msg"></app-todo>
+    <app-todo *ngIf="msg" [msg]="msg"></app-todo>
+    

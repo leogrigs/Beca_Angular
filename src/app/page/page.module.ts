@@ -7,6 +7,7 @@ import { BemvindoComponent } from './bemvindo/bemvindo.component';
 import { RouterModule } from '@angular/router';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { BioComponent } from './bio/bio.component';
+import { CoreModule } from '../core/core.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { BioComponent } from './bio/bio.component';
     CommonModule,
     FormsModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CoreModule
   ],
   exports: [
     FormsComponent,

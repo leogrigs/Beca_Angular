@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { PlataformDetectorService } from '../services/detector-plataforma/plataform-detector.service';
 import { Adress, ViacepService } from '../services/viacep/viacep.service';
 
 @Component({
@@ -19,16 +20,18 @@ export class FormsComponent implements OnInit {
 
   msg: string = '';
 
-
-
-  constructor(private fb: FormBuilder, private viacepService: ViacepService) { }
-
+  @ViewChild('cep') cepInput: ElementRef<HTMLInputElement> | undefined;  
+  
+  constructor(private fb: FormBuilder, private viacepService: ViacepService, private plataformDetector: PlataformDetectorService) { }
+  
   form = this.fb.group({
     nome: [''],
     cpf: ['', Validators.required],
     email: [''],
     cep: ['', Validators.required]
   })
+
+  // vnome: boolean = this.form.get('nome')?.value == ''? true : false;
 
   ngOnInit(): void {
   }
@@ -60,6 +63,8 @@ export class FormsComponent implements OnInit {
         console.log(err.value);
         this.error = true;
         this.msg = "CEP Inválido"
+        this.plataformDetector.isPlatformBrowser() &&
+          this.cepInput?.nativeElement.focus();
       }
     )
 
@@ -76,6 +81,8 @@ export class FormsComponent implements OnInit {
     }
     else{
       this.msg = "CEP não encontrado!";
+      this.plataformDetector.isPlatformBrowser() &&
+        this.cepInput?.nativeElement.focus();
     }
    }
 
